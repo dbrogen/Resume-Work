@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ck1b6g1kethdh"
+path="res://.godot/imported/footstep_grass_002.ogg-414d614c07dd9fe1e5925c74afd8364e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Impact Sounds/footstep_grass_002.ogg"
+dest_files=["res://.godot/imported/footstep_grass_002.ogg-414d614c07dd9fe1e5925c74afd8364e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

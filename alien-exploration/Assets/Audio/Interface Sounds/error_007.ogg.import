@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cooajmmo8vw0j"
+path="res://.godot/imported/error_007.ogg-6cb7efea3a3e078c7835bb81948d325e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Interface Sounds/error_007.ogg"
+dest_files=["res://.godot/imported/error_007.ogg-6cb7efea3a3e078c7835bb81948d325e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

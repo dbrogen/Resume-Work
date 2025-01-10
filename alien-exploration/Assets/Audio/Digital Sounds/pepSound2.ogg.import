@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cd5xn7ngxrv7t"
+path="res://.godot/imported/pepSound2.ogg-adfd7cc2482d7168da72c7ade730edd8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Digital Sounds/pepSound2.ogg"
+dest_files=["res://.godot/imported/pepSound2.ogg-adfd7cc2482d7168da72c7ade730edd8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5776hu58kp2u"]
+
+[ext_resource type="Script" path="res://Ground Levels/Scripts/QuestPlanet/quest_ground.gd" id="1_db2mx"]
+[ext_resource type="PackedScene" uid="uid://c0yqhd02j858a" path="res://Ground Levels/Ground Scenes/PlanetBackgrounds/quest_planet_background.tscn" id="1_jgseg"]
+[ext_resource type="PackedScene" uid="uid://cb1uuupi45f82" path="res://Ground Levels/Ground Scenes/tile_map.tscn" id="2_y7diq"]
+[ext_resource type="PackedScene" uid="uid://5vu50tutu46p" path="res://Ground Levels/Ground Scenes/player.tscn" id="3_2sh5s"]
+[ext_resource type="PackedScene" uid="uid://snf5t7268wd2" path="res://Ground Levels/Ground Scenes/quest_building.tscn" id="4_cj7hy"]
+[ext_resource type="PackedScene" uid="uid://dtuenxyml2gyt" path="res://Ground Levels/Ground Scenes/rocket.tscn" id="5_xhwks"]
+[ext_resource type="PackedScene" uid="uid://d3e4sxgbqjuy1" path="res://Ground Levels/Ground Scenes/gems/blue_jewel.tscn" id="7_juve1"]
+[ext_resource type="PackedScene" uid="uid://cloiss3h0a6f6" path="res://Ground Levels/Ground Scenes/gems/red_gem.tscn" id="8_cc5g1"]
+[ext_resource type="PackedScene" uid="uid://dok5aapwb4cpn" path="res://Ground Levels/Ground Scenes/gems/yellow_gem.tscn" id="9_sdo3o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie0fq"]
+size = Vector2(372, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_focqi"]
+size = Vector2(2712, 289)
+
+[node name="QuestGround" type="Node2D"]
+script = ExtResource("1_db2mx")
+
+[node name="QuestPlanetBackground" parent="." instance=ExtResource("1_jgseg")]
+
+[node name="TileMap" parent="." instance=ExtResource("2_y7diq")]
+layer_0/tile_data = PackedInt32Array(393216, 65536, 3, 458752, 0, 3, 524288, 0, 3, 589824, 0, 3, 655360, 0, 3, 720896, 0, 3, 786432, 0, 3, 851968, 0, 3, 917504, 0, 3, 983040, 0, 3, 1048576, 0, 3, 1114112, 0, 3, 393217, 131072, 3, 458753, 0, 3, 524289, 0, 3, 589825, 0, 3, 655361, 0, 3, 720897, 0, 3, 786433, 0, 3, 851969, 0, 3, 917505, 0, 3, 983041, 0, 3, 1048577, 0, 3, 1114113, 0, 3, 393218, 131072, 3, 458754, 0, 3, 524290, 0, 3, 589826, 0, 3, 655362, 0, 3, 720898, 0, 3, 786434, 0, 3, 851970, 0, 3, 917506, 0, 3, 983042, 0, 3, 1048578, 0, 3, 1114114, 0, 3, 393219, 131072, 3, 458755, 0, 3, 524291, 0, 3, 589827, 0, 3, 655363, 0, 3, 720899, 0, 3, 786435, 0, 3, 851971, 0, 3, 917507, 0, 3, 983043, 0, 3, 1048579, 0, 3, 1114115, 0, 3, 393220, 131072, 3, 458756, 0, 3, 524292, 0, 3, 589828, 0, 3, 655364, 0, 3, 720900, 0, 3, 786436, 0, 3, 851972, 0, 3, 917508, 0, 3, 983044, 0, 3, 1048580, 0, 3, 1114116, 0, 3, 393221, 131072, 3, 458757, 0, 3, 524293, 0, 3, 589829, 0, 3, 655365, 0, 3, 720901, 0, 3, 786437, 0, 3, 851973, 0, 3, 917509, 0, 3, 983045, 0, 3, 1048581, 0, 3, 1114117, 0, 3, 393222, 196608, 3, 458758, 0, 3, 524294, 0, 3, 589830, 0, 3, 655366, 0, 3, 720902, 0, 3, 786438, 0, 3, 851974, 0, 3, 917510, 0, 3, 983046, 0, 3, 1048582, 0, 3, 1114118, 0, 3, 851975, 131072, 3, 917511, 0, 3, 983047, 0, 3, 1048583, 0, 3, 1114119, 0, 3, 851976, 131072, 3, 917512, 0, 3, 983048, 0, 3, 1048584, 0, 3, 1114120, 0, 3, 851977, 131072, 3, 917513, 0, 3, 983049, 0, 3, 1048585, 0, 3, 1114121, 0, 3, 851978, 131072, 3, 917514, 0, 3, 983050, 0, 3, 1048586, 0, 3, 1114122, 0, 3, 851979, 131072, 3, 917515, 0, 3, 983051, 0, 3, 1048587, 0, 3, 1114123, 0, 3, 851980, 131072, 3, 917516, 0, 3, 983052, 0, 3, 1048588, 0, 3, 1114124, 0, 3, 851981, 131072, 3, 917517, 0, 3, 983053, 0, 3, 1048589, 0, 3, 1114125, 0, 3, 851982, 131072, 3, 917518, 0, 3, 983054, 0, 3, 1048590, 0, 3, 1114126, 0, 3, 851983, 131072, 3, 917519, 0, 3, 983055, 0, 3, 1048591, 0, 3, 1114127, 0, 3, 851984, 131072, 3, 917520, 0, 3, 983056, 0, 3, 1048592, 0, 3, 1114128, 0, 3, 851985, 131072, 3, 917521, 0, 3, 983057, 0, 3, 1048593, 0, 3, 1114129, 0, 3, 851986, 131072, 3, 917522, 0, 3, 983058, 0, 3, 1048594, 0, 3, 1114130, 0, 3, 851987, 131072, 3, 917523, 0, 3, 983059, 0, 3, 1048595, 0, 3, 1114131, 0, 3, 851988, 131072, 3, 917524, 0, 3, 983060, 0, 3, 1048596, 0, 3, 1114132, 0, 3, 851989, 131072, 3, 917525, 0, 3, 983061, 0, 3, 1048597, 0, 3, 1114133, 0, 3, 851990, 131072, 3, 917526, 0, 3, 983062, 0, 3, 1048598, 0, 3, 1114134, 0, 3, 851991, 131072, 3, 917527, 0, 3, 983063, 0, 3, 1048599, 0, 3, 1114135, 0, 3, 851992, 131072, 3, 917528, 0, 3, 983064, 0, 3, 1048600, 0, 3, 1114136, 0, 3, 851993, 131072, 3, 917529, 0, 3, 983065, 0, 3, 1048601, 0, 3, 1114137, 0, 3, 851994, 131072, 3, 917530, 0, 3, 983066, 0, 3, 1048602, 0, 3, 1114138, 0, 3, 851995, 131072, 3, 917531, 0, 3, 983067, 0, 3, 1048603, 0, 3, 1114139, 0, 3, 851996, 131072, 3, 917532, 0, 3, 983068, 0, 3, 1048604, 0, 3, 1114140, 0, 3, 851997, 131072, 3, 917533, 0, 3, 983069, 0, 3, 1048605, 0, 3, 1114141, 0, 3, 851998, 131072, 3, 917534, 0, 3, 983070, 0, 3, 1048606, 0, 3, 1114142, 0, 3, 851999, 131072, 3, 917535, 0, 3, 983071, 0, 3, 1048607, 0, 3, 1114143, 0, 3, 852000, 196608, 3, 917536, 0, 3, 983072, 0, 3, 1048608, 0, 3, 1114144, 0, 3, 786441, 1114112, 1, 786452, 1114112, 1, 327681, 1114112, 1, 327686, 1114112, 1, 786457, 1179648, 1, 786458, 1245184, 1, 786459, 1310720, 1)
+
+[node name="Player" parent="." instance=ExtResource("3_2sh5s")]
+position = Vector2(713, 801)
+
+[node name="QuestBuilding" parent="." instance=ExtResource("4_cj7hy")]
+position = Vector2(1919, 739)
+
+[node name="Rocket" parent="." instance=ExtResource("5_xhwks")]
+position = Vector2(512, 795)
+
+[node name="ChangeSceneBox" type="Area2D" parent="."]
+position = Vector2(346, 219)
+collision_layer = 4
+collision_mask = 17
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeSceneBox"]
+position = Vector2(176, 35.5)
+shape = SubResource("RectangleShape2D_ie0fq")
+
+[node name="BlueJewel" parent="." instance=ExtResource("7_juve1")]
+position = Vector2(1234, 787)
+
+[node name="RedGem" parent="." instance=ExtResource("8_cc5g1")]
+position = Vector2(1366, 785)
+
+[node name="YellowGem" parent="." instance=ExtResource("9_sdo3o")]
+position = Vector2(1298, 735)
+
+[node name="Death_Zone" type="Area2D" parent="."]
+position = Vector2(1093, 300)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_Zone"]
+position = Vector2(263, 697)
+shape = SubResource("RectangleShape2D_focqi")
+
+[connection signal="takeoff" from="Rocket" to="Player" method="_on_rocket_takeoff"]
+[connection signal="body_entered" from="ChangeSceneBox" to="." method="_on_change_scene_box_body_entered"]
+[connection signal="body_entered" from="Death_Zone" to="." method="_on_death_zone_body_entered"]

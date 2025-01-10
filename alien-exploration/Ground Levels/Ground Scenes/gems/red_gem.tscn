@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cloiss3h0a6f6"]
+
+[ext_resource type="Texture2D" uid="uid://byf6a6jfl6qab" path="res://Assets/Sprites/Collectables/redGem.png" id="1_58rfb"]
+[ext_resource type="Script" path="res://Inventory/Scripts/red_gem.gd" id="1_ickbk"]
+[ext_resource type="Resource" uid="uid://lt6niqeb61wx" path="res://Inventory/Items/redgem.tres" id="2_xtwx2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hexth"]
+
+[node name="RedGem" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_ickbk")
+item = ExtResource("2_xtwx2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_58rfb")
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+rotation = -0.837758
+shape = SubResource("RectangleShape2D_hexth")
+
+[connection signal="body_entered" from="PickupArea" to="." method="_on_pickup_area_body_entered"]

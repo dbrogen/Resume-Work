@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://u1t7ewn31raw"]
+
+[ext_resource type="Texture2D" uid="uid://dami8xx3afejp" path="res://Assets/Backgrounds/set4_background.png" id="1_5bknn"]
+[ext_resource type="Texture2D" uid="uid://d20bl1qr0isca" path="res://Assets/Backgrounds/set3_tiles.png" id="2_42qbg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bwxgm"]
+blend_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0ry5n"]
+blend_mode = 1
+
+[node name="Space Background" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Space" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 640)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Space"]
+material = SubResource("CanvasItemMaterial_bwxgm")
+scale = Vector2(5, 5)
+texture = ExtResource("1_5bknn")
+
+[node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 640)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
+material = SubResource("CanvasItemMaterial_0ry5n")
+scale = Vector2(2, 2)
+texture = ExtResource("2_42qbg")
+centered = false

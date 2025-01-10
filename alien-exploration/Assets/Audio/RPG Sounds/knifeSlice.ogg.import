@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfah2myjqkntn"
+path="res://.godot/imported/knifeSlice.ogg-326808d29bb09a6dac10497964d88bf3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/RPG Sounds/knifeSlice.ogg"
+dest_files=["res://.godot/imported/knifeSlice.ogg-326808d29bb09a6dac10497964d88bf3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

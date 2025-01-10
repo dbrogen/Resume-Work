@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsilb54sg1mb7"]
+
+[ext_resource type="Script" path="res://Space Levels/Scripts/space_planet_2.gd" id="1_6y5a8"]
+[ext_resource type="Texture2D" uid="uid://cokotllhbep7t" path="res://Assets/Sprites/Ships/Parts/Alien/spaceParts_080.png" id="2_1w4rx"]
+[ext_resource type="PackedScene" uid="uid://dtn4rmmyf5m0" path="res://Interaction/Scenes/interactable.tscn" id="3_q1woj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7sedh"]
+radius = 180.801
+
+[node name="Planet 2" type="Node2D"]
+script = ExtResource("1_6y5a8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.99999, -4.5)
+scale = Vector2(5.46154, 5.42308)
+texture = ExtResource("2_1w4rx")
+
+[node name="interactable" parent="." instance=ExtResource("3_q1woj")]
+interact_name = "[E] to Land"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+shape = SubResource("CircleShape2D_7sedh")

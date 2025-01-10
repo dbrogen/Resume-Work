@@ -1,0 +1,134 @@
+[gd_scene load_steps=24 format=3 uid="uid://5vu50tutu46p"]
+
+[ext_resource type="Script" path="res://Ground Levels/Scripts/MultiPlanet/player.gd" id="1_cxo3h"]
+[ext_resource type="Resource" uid="uid://b1nlctbh4uvfw" path="res://Inventory/player_inventory.tres" id="2_elocw"]
+[ext_resource type="Texture2D" uid="uid://bhxv1eyghm8ed" path="res://Assets/Sprites/Characters/Player Green/playerGreen_dead.png" id="2_yqoyg"]
+[ext_resource type="Texture2D" uid="uid://dqlpfblx8hfgx" path="res://Assets/Sprites/Characters/Player Green/playerGreen_stand.png" id="2_yyi4b"]
+[ext_resource type="PackedScene" uid="uid://vf0dvo3mjkhf" path="res://Inventory/Scenes/inventory_ui.tscn" id="3_11shf"]
+[ext_resource type="Texture2D" uid="uid://q3677458ouqj" path="res://Assets/Sprites/Characters/Player Green/playerGreen_duck.png" id="3_wlt0x"]
+[ext_resource type="Texture2D" uid="uid://xwd5oacvbnxq" path="res://Assets/Sprites/Characters/Player Green/playerGreen_fall.png" id="4_7avi6"]
+[ext_resource type="Texture2D" uid="uid://cjxgkeaplrham" path="res://Assets/Sprites/Characters/Player Green/playerGreen_up1.png" id="6_gahke"]
+[ext_resource type="Texture2D" uid="uid://nsvweovc5v6d" path="res://Assets/Sprites/Characters/Player Green/playerGreen_up2.png" id="7_caj0x"]
+[ext_resource type="Texture2D" uid="uid://dkvms6gjr1icy" path="res://Assets/Sprites/Characters/Player Green/playerGreen_up3.png" id="8_ptjbm"]
+[ext_resource type="Texture2D" uid="uid://rg2oql64h6gm" path="res://Assets/Sprites/Characters/Player Green/playerGreen_swim1.png" id="9_usu5p"]
+[ext_resource type="Texture2D" uid="uid://r7auhvd0oxpk" path="res://Assets/Sprites/Characters/Player Green/playerGreen_swim2.png" id="10_32iom"]
+[ext_resource type="Texture2D" uid="uid://dahpwqdkg1be6" path="res://Assets/Sprites/Characters/Player Green/playerGreen_walk1.png" id="11_3pv6b"]
+[ext_resource type="Texture2D" uid="uid://cvh5bqejjka7u" path="res://Assets/Sprites/Characters/Player Green/playerGreen_walk2.png" id="12_yjkxf"]
+[ext_resource type="Texture2D" uid="uid://dka0b8y4wbnpc" path="res://Assets/Sprites/Characters/Player Green/playerGreen_walk3.png" id="13_iyd2s"]
+[ext_resource type="PackedScene" uid="uid://ciqv48t78p08l" path="res://Interaction/Scenes/interaction_manager.tscn" id="15_n7ttp"]
+[ext_resource type="PackedScene" uid="uid://bj1fea7hnawaj" path="res://Quests/Scenes/quest_journal.tscn" id="17_hxob3"]
+[ext_resource type="Texture2D" uid="uid://c7qva6oiksy7u" path="res://Assets/UI/PNG/grey_crossGrey.png" id="18_thacu"]
+[ext_resource type="Texture2D" uid="uid://qqmi2guurrom" path="res://Assets/UI/PNG/yellow_cross.png" id="19_ma2gi"]
+[ext_resource type="Texture2D" uid="uid://5m21n8rptkbg" path="res://Assets/UI/PNG/green_checkmark.png" id="20_77qlo"]
+[ext_resource type="Texture2D" uid="uid://cosaq412t0ui4" path="res://Assets/UI/PNG/green_cross.png" id="20_yjp5x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3s1w8"]
+radius = 20.0
+height = 50.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxr6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yqoyg")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wlt0x")
+}],
+"loop": true,
+"name": &"Duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7avi6")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yyi4b")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gahke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_caj0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ptjbm")
+}],
+"loop": true,
+"name": &"Jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_usu5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_32iom")
+}],
+"loop": true,
+"name": &"Swimming",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3pv6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yjkxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iyd2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yjkxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3pv6b")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 15
+script = ExtResource("1_cxo3h")
+inventory = ExtResource("2_elocw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3s1w8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xxr6f")
+animation = &"Idle"
+
+[node name="Inventory_UI" parent="." groups=["Player"] instance=ExtResource("3_11shf")]
+offset_left = -89.0
+offset_top = -173.0
+offset_right = 1.0
+offset_bottom = -105.0
+scale = Vector2(2, 2)
+
+[node name="InteractionManager" parent="." instance=ExtResource("15_n7ttp")]
+
+[node name="QuestJournal" parent="." node_paths=PackedStringArray("player") instance=ExtResource("17_hxob3")]
+player = NodePath("..")
+icons = Array[Texture2D]([ExtResource("18_thacu"), ExtResource("19_ma2gi"), ExtResource("20_yjp5x"), ExtResource("20_77qlo")])

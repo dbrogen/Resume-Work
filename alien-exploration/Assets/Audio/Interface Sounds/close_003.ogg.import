@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ca1ngu0mc6iv6"
+path="res://.godot/imported/close_003.ogg-be158130b2936641cc71e55bcdd8eb5e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Interface Sounds/close_003.ogg"
+dest_files=["res://.godot/imported/close_003.ogg-be158130b2936641cc71e55bcdd8eb5e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

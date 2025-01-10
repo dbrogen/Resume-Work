@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dok5aapwb4cpn"]
+
+[ext_resource type="Texture2D" uid="uid://bou4ysy2js2st" path="res://Assets/Sprites/Collectables/yellowCrystal.png" id="1_5uqdp"]
+[ext_resource type="Script" path="res://Ground Levels/Scripts/MultiPlanet/yellow_gem.gd" id="1_ei4qa"]
+[ext_resource type="Resource" uid="uid://lehybuqdop26" path="res://Inventory/Items/YellowGem.tres" id="2_quf44"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxkes"]
+radius = 5.0
+
+[node name="YellowGem" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_ei4qa")
+item = ExtResource("2_quf44")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_5uqdp")
+
+[node name="PickupArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CircleShape2D_lxkes")
+
+[connection signal="body_entered" from="PickupArea" to="." method="_on_pickup_area_body_entered"]

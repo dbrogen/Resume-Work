@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5hebuit0fwbc"
+path="res://.godot/imported/confirmation_001.ogg-a362ef2cde027660c9bd98e3879a668d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Interface Sounds/confirmation_001.ogg"
+dest_files=["res://.godot/imported/confirmation_001.ogg-a362ef2cde027660c9bd98e3879a668d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

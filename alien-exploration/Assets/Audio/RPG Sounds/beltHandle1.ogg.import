@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://t0fo5re7x6y1"
+path="res://.godot/imported/beltHandle1.ogg-ee52c628f22b5dc4d047e8eac13205d5.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/RPG Sounds/beltHandle1.ogg"
+dest_files=["res://.godot/imported/beltHandle1.ogg-ee52c628f22b5dc4d047e8eac13205d5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

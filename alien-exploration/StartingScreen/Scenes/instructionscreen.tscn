@@ -1,0 +1,174 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdebok3dif50"]
+
+[ext_resource type="Texture2D" uid="uid://ryynbkp4jvse" path="res://Assets/Backgrounds/set2_background.png" id="1_p11oc"]
+[ext_resource type="Script" path="res://StartingScreen/Scripts/instructionscreen.gd" id="2_nt3hy"]
+
+[node name="Background" type="TextureRect"]
+custom_minimum_size = Vector2(1280, 640)
+offset_right = 1280.0
+offset_bottom = 657.0
+texture = ExtResource("1_p11oc")
+script = ExtResource("2_nt3hy")
+
+[node name="Player" type="Label" parent="."]
+layout_mode = 2
+offset_left = 193.0
+offset_top = 142.0
+offset_right = 529.0
+offset_bottom = 187.0
+theme_override_font_sizes/font_size = 32
+text = "Player Controls"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Player Controls" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 255.0
+offset_right = 532.0
+offset_bottom = 447.0
+theme_override_constants/h_separation = 100
+columns = 2
+
+[node name="Left" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Walk Left"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Left_Control" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "A or J"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Right" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Walk Right"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Right_Control" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "D or L"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Jump" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Jump"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Jump_Control" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "W or I"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Inventory" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Open/Close Inventory"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Inventory_Control" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TAB"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Quest Tab" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Open/Close Quest Tab"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Quest__Tab_Control" type="Label" parent="Player Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Q"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Rocket" type="Label" parent="."]
+layout_mode = 2
+offset_left = 695.0
+offset_top = 142.0
+offset_right = 1031.0
+offset_bottom = 187.0
+theme_override_font_sizes/font_size = 32
+text = "Rocket Controls"
+vertical_alignment = 1
+
+[node name="Rocket Controls" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 255.0
+offset_right = 1186.0
+offset_bottom = 447.0
+theme_override_constants/h_separation = 100
+columns = 2
+
+[node name="Fly_Up" type="Label" parent="Rocket Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Fly Forward"
+vertical_alignment = 1
+
+[node name="Fly_Up_Control" type="Label" parent="Rocket Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "W or I"
+vertical_alignment = 1
+
+[node name="Fly_Down" type="Label" parent="Rocket Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Fly Back"
+vertical_alignment = 1
+
+[node name="Fly_Down_Control" type="Label" parent="Rocket Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "S or K"
+vertical_alignment = 1
+
+[node name="Left" type="Label" parent="Rocket Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Navigate Ship"
+vertical_alignment = 1
+
+[node name="Left_Control" type="Label" parent="Rocket Controls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Mouse"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(0.75, 0.75)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 16.0
+offset_bottom = 19.0
+scale = Vector2(5, 3)
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

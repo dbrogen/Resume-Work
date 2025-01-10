@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg1f1018x7761"]
+
+[ext_resource type="Texture2D" uid="uid://ryynbkp4jvse" path="res://Assets/Backgrounds/set2_background.png" id="1_b1r3w"]
+[ext_resource type="Texture2D" uid="uid://btom3ho8l06bn" path="res://Assets/Backgrounds/set4_hills.png" id="2_dcpej"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gecwd"]
+blend_mode = 2
+
+[node name="Planet_1" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 960)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_b1r3w")
+centered = false
+
+[node name="Hills" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Hills"]
+material = SubResource("CanvasItemMaterial_gecwd")
+position = Vector2(0, -80)
+scale = Vector2(1.5, 2)
+texture = ExtResource("2_dcpej")
+centered = false

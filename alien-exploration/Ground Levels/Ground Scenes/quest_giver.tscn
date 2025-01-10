@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://n2tvjaxo77g"]
+
+[ext_resource type="Script" path="res://Ground Levels/Scripts/QuestPlanet/quest_giver.gd" id="1_7nmtl"]
+[ext_resource type="Texture2D" uid="uid://b0iac1v0ljwoc" path="res://Assets/Sprites/Characters/Player Grey/playerGrey_stand.png" id="1_jvqjo"]
+[ext_resource type="Script" path="res://Quests/Scripts/collectquest.gd" id="2_ejs7n"]
+[ext_resource type="PackedScene" uid="uid://dtn4rmmyf5m0" path="res://Interaction/Scenes/interactable.tscn" id="2_p0jic"]
+[ext_resource type="Texture2D" uid="uid://b8njbekgjsqlg" path="res://Assets/Sprites/Characters/Player Grey/playerGrey_walk1.png" id="2_wxvgm"]
+
+[sub_resource type="Resource" id="Resource_uud00"]
+script = ExtResource("2_ejs7n")
+collectables = Array[String](["Blue Jewel", "Red Gem", "Yellow Gem"])
+name = "Collect The Universe"
+status = -1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5y6jd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wxvgm")
+}],
+"loop": true,
+"name": &"FacingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jvqjo")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c0wwl"]
+radius = 35.0571
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qd24t"]
+radius = 55.0818
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ckqf"]
+size = Vector2(125, 136)
+
+[node name="QuestGiver" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_7nmtl")
+quest = SubResource("Resource_uud00")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_5y6jd")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c0wwl")
+
+[node name="interactable" parent="." instance=ExtResource("2_p0jic")]
+interact_name = "[E] to Unlock the Quest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+shape = SubResource("CircleShape2D_qd24t")
+
+[node name="LeftLooking" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftLooking"]
+position = Vector2(-61, -16)
+shape = SubResource("RectangleShape2D_5ckqf")
+
+[node name="RightLooking" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightLooking"]
+position = Vector2(64, -16)
+shape = SubResource("RectangleShape2D_5ckqf")
+
+[connection signal="body_entered" from="LeftLooking" to="." method="_on_left_looking_body_entered"]
+[connection signal="body_exited" from="LeftLooking" to="." method="_on_left_looking_body_exited"]
+[connection signal="body_entered" from="RightLooking" to="." method="_on_right_looking_body_entered"]
+[connection signal="body_entered" from="RightLooking" to="." method="_on_left_looking_body_entered"]
+[connection signal="body_exited" from="RightLooking" to="." method="_on_left_looking_body_exited"]
+[connection signal="body_exited" from="RightLooking" to="." method="_on_right_looking_body_exited"]

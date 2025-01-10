@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq1msx5jar7nr"]
+
+[ext_resource type="Texture2D" uid="uid://c80tghsrypn7a" path="res://Assets/Backgrounds/set3_background.png" id="1_2axhq"]
+[ext_resource type="Texture2D" uid="uid://ryyrjwvyisv8" path="res://Assets/Backgrounds/set4_tiles.png" id="2_4vln3"]
+
+[node name="planet_two_background" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 960)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_2axhq")
+centered = false
+
+[node name="Texture" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 480)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Texture"]
+texture = ExtResource("2_4vln3")
+centered = false

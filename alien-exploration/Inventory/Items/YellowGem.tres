@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Inventory_Item" load_steps=3 format=3 uid="uid://lehybuqdop26"]
+
+[ext_resource type="Script" path="res://Inventory/Scripts/inventory_item.gd" id="1_2k1pl"]
+[ext_resource type="Texture2D" uid="uid://ba4mjf5o66k7v" path="res://Assets/Sprites/Collectables/smallyellowCrystal.png" id="2_2l772"]
+
+[resource]
+script = ExtResource("1_2k1pl")
+name = "Yellow Gem"
+texture = ExtResource("2_2l772")

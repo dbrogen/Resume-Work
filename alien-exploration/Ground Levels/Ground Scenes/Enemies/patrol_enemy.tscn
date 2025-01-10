@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://j4dr00wna556"]
+
+[ext_resource type="Script" path="res://Ground Levels/Scripts/Enemies/patrol_enemy.gd" id="1_o18aj"]
+[ext_resource type="Texture2D" uid="uid://dyynj6fyqo8rs" path="res://Assets/Sprites/Characters/Enemies/enemyWalking_1.png" id="1_xkaka"]
+[ext_resource type="Texture2D" uid="uid://dl772gve6dgjs" path="res://Assets/Sprites/Characters/Enemies/enemyWalking_2.png" id="2_nh5q6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2l0hg"]
+radius = 16.0
+height = 44.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhs4k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xkaka")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xkaka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nh5q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_xkaka")
+}],
+"loop": true,
+"name": &"Patrolling",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5kby"]
+radius = 16.0
+height = 44.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5k2b"]
+size = Vector2(38, 8)
+
+[node name="PatrolEnemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_o18aj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2l0hg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uhs4k")
+animation = &"Idle"
+
+[node name="Killbox" type="Area2D" parent="."]
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killbox"]
+shape = SubResource("CapsuleShape2D_d5kby")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(-1, -33)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_q5k2b")
+
+[connection signal="body_entered" from="Killbox" to="." method="_on_killbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

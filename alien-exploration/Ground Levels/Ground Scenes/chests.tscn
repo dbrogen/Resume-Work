@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://na17auri1w17"]
+
+[ext_resource type="Texture2D" uid="uid://cot7g5nwy4als" path="res://Assets/Sprites/Collectables/chestsAll.png" id="1_e2mym"]
+[ext_resource type="Script" path="res://Ground Levels/Scripts/MultiPlanet/chests.gd" id="2_1vo78"]
+[ext_resource type="PackedScene" uid="uid://dtn4rmmyf5m0" path="res://Interaction/Scenes/interactable.tscn" id="3_g3gul"]
+[ext_resource type="PackedScene" uid="uid://dok5aapwb4cpn" path="res://Ground Levels/Ground Scenes/gems/yellow_gem.tscn" id="4_e0rco"]
+[ext_resource type="Resource" uid="uid://lehybuqdop26" path="res://Inventory/Items/YellowGem.tres" id="4_mwsvy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilcoq"]
+atlas = ExtResource("1_e2mym")
+region = Rect2(0, 15.8664, 16.3358, 16.3265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m17kp"]
+atlas = ExtResource("1_e2mym")
+region = Rect2(32.1636, 16.2003, 15.8364, 15.7999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nx7w"]
+size = Vector2(137, 88)
+
+[node name="Chests" type="Node2D"]
+position = Vector2(210, 233)
+script = ExtResource("2_1vo78")
+
+[node name="Closed Chest" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_ilcoq")
+
+[node name="Open Chest" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_m17kp")
+
+[node name="YellowGem" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(18.3333, 5.33333)
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem2" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(13.6667, 1)
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem5" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(6.33334, 3.66666)
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem6" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(-1, 5.66666)
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem7" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(12.3333, 6.66666)
+rotation = -0.210255
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem9" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(7.66667, -1.66667)
+rotation = -0.210255
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem10" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(-0.666664, 0.666664)
+rotation = -0.210255
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem11" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(-5.66666, 3)
+rotation = 0.469872
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem8" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(-10.3333, 5.66666)
+rotation = -0.210255
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem3" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(-11.6667, 1.66666)
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="YellowGem4" parent="Open Chest" instance=ExtResource("4_e0rco")]
+position = Vector2(-17, 6)
+scale = Vector2(0.5, 0.5)
+item = ExtResource("4_mwsvy")
+
+[node name="interactable" parent="." instance=ExtResource("3_g3gul")]
+position = Vector2(-22, -13)
+interact_name = "[E] to Open"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+position = Vector2(20.5, -7)
+shape = SubResource("RectangleShape2D_1nx7w")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3e4sxgbqjuy1"]
+
+[ext_resource type="Script" path="res://Inventory/Scripts/blue_jewel.gd" id="1_lh416"]
+[ext_resource type="Texture2D" uid="uid://b6kh7emfwfqj" path="res://Assets/Sprites/Collectables/blueJewel.png" id="2_dniml"]
+[ext_resource type="Resource" uid="uid://ce7b471n2qce4" path="res://Inventory/Items/bluejewel.tres" id="2_hotwb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oyid0"]
+radius = 12.0416
+
+[node name="BlueJewel" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_lh416")
+item = ExtResource("2_hotwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dniml")
+
+[node name="PickupArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CircleShape2D_oyid0")
+
+[connection signal="body_entered" from="PickupArea" to="." method="_on_pickup_area_body_entered"]

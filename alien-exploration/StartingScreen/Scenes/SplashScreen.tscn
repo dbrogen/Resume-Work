@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf4vn8j7spmlb"]
+
+[ext_resource type="Texture2D" uid="uid://yr2l5gciuka0" path="res://Assets/Backgrounds/Splash_Screen.png" id="1_0xxuk"]
+[ext_resource type="Script" path="res://StartingScreen/Scripts/splash_screen.gd" id="2_jrfxh"]
+[ext_resource type="AudioStream" uid="uid://b71525d1omrak" path="res://Assets/Audio/Interface Sounds/click_001.ogg" id="3_2yfne"]
+
+[sub_resource type="Theme" id="Theme_t54h0"]
+
+[node name="Splash" type="TextureRect"]
+offset_left = -2.0
+offset_right = 1164.0
+offset_bottom = 1314.0
+scale = Vector2(1, 0.5)
+texture = ExtResource("1_0xxuk")
+script = ExtResource("2_jrfxh")
+
+[node name="Start Button Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -256.0
+offset_right = 255.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="StartButton" type="Button" parent="Start Button Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_t54h0")
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 1, 1)
+theme_override_colors/font_color = Color(0.301961, 1, 0, 1)
+theme_override_font_sizes/font_size = 144
+text = "Start"
+
+[node name="Instructions Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -116.0
+offset_right = 731.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+metadata/_edit_group_ = true
+
+[node name="Instructions" type="Button" parent="Instructions Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_t54h0")
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 1, 1)
+theme_override_colors/font_color = Color(0.301961, 1, 0, 1)
+theme_override_font_sizes/font_size = 144
+text = "Controls"
+
+[node name="Credits Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -547.0
+offset_top = -1144.0
+offset_right = 294.0
+offset_bottom = -939.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+metadata/_edit_group_ = true
+
+[node name="Credits" type="Button" parent="Credits Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_t54h0")
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 1, 1)
+theme_override_colors/font_color = Color(0.992157, 0.00784314, 0.992157, 1)
+theme_override_font_sizes/font_size = 144
+text = "Credits"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2yfne")
+
+[connection signal="pressed" from="Start Button Container/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Instructions Container/Instructions" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="Credits Container/Credits" to="." method="_on_credits_pressed"]

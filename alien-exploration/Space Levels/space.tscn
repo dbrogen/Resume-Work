@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfj824m6bo2y5"]
+
+[ext_resource type="PackedScene" uid="uid://cq786kdknfsun" path="res://Space Levels/Space Scenes/player_rocket.tscn" id="4_itxwc"]
+[ext_resource type="PackedScene" uid="uid://u1t7ewn31raw" path="res://Space Levels/Space Scenes/space_background.tscn" id="5_2qq7v"]
+[ext_resource type="PackedScene" uid="uid://dfemj6cxfm73l" path="res://Space Levels/Space Scenes/space_planet_1.tscn" id="5_4cc36"]
+[ext_resource type="PackedScene" uid="uid://bsilb54sg1mb7" path="res://Space Levels/Space Scenes/space_planet_2.tscn" id="6_0ia05"]
+[ext_resource type="PackedScene" uid="uid://ckeho4vkuvoyw" path="res://Space Levels/Space Scenes/quest_planet.tscn" id="6_d07qu"]
+
+[node name="Space_Level_1" type="Node2D"]
+
+[node name="Space Background" parent="." instance=ExtResource("5_2qq7v")]
+
+[node name="Player_Rocket" parent="." instance=ExtResource("4_itxwc")]
+position = Vector2(607, 395)
+
+[node name="Planet 1" parent="." instance=ExtResource("5_4cc36")]
+position = Vector2(106, 673)
+
+[node name="Planet 2" parent="." instance=ExtResource("6_0ia05")]
+position = Vector2(1158, 109)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="QuestPlanet" parent="." instance=ExtResource("6_d07qu")]
+position = Vector2(152, 107)
+
+[connection signal="planet_1_entered" from="Planet 1" to="." method="_on_planet_1_orbit_entered"]

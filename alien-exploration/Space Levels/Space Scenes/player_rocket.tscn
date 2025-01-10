@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq786kdknfsun"]
+
+[ext_resource type="Script" path="res://Space Levels/Scripts/player_rocket.gd" id="1_vjd60"]
+[ext_resource type="Texture2D" uid="uid://c5m8hv5b6kesu" path="res://Assets/Sprites/Ships/Alien Ships/spaceShips_008.png" id="2_2t5ca"]
+[ext_resource type="PackedScene" uid="uid://ciqv48t78p08l" path="res://Interaction/Scenes/interaction_manager.tscn" id="3_wkuk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aamix"]
+size = Vector2(99, 81)
+
+[node name="Player_Rocket" type="CharacterBody2D"]
+script = ExtResource("1_vjd60")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_aamix")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 4.71239
+texture = ExtResource("2_2t5ca")
+
+[node name="DecelerationTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="InteractionManager" parent="." instance=ExtResource("3_wkuk7")]

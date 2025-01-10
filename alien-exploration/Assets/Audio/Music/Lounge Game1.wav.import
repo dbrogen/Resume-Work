@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjc2foa0yfkj2"
+path="res://.godot/imported/Lounge Game1.wav-4e95bc53c3963d9269d46bddd5ec756d.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Lounge Game1.wav"
+dest_files=["res://.godot/imported/Lounge Game1.wav-4e95bc53c3963d9269d46bddd5ec756d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
